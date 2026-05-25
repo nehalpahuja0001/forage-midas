@@ -16,32 +16,24 @@ public class TransactionRecord {
     private UserRecord recipient;
 
     private float amount;
+    private float incentive;  // ← NAYA
 
-    public TransactionRecord() {
-    }
+    public TransactionRecord() {}
 
     public TransactionRecord(UserRecord sender,
                              UserRecord recipient,
                              float amount) {
-
         this.sender = sender;
         this.recipient = recipient;
         this.amount = amount;
     }
 
-    public Long getId() {
-        return id;
-    }
+    public Long getId() { return id; }
+    public UserRecord getSender() { return sender; }
+    public UserRecord getRecipient() { return recipient; }
+    public float getAmount() { return amount; }
 
-    public UserRecord getSender() {
-        return sender;
-    }
-
-    public UserRecord getRecipient() {
-        return recipient;
-    }
-
-    public float getAmount() {
-        return amount;
-    }
+    // ← NAYA
+    public float getIncentive() { return incentive; }
+    public void setIncentive(float incentive) { this.incentive = incentive; }
 }
